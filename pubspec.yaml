@@ -1,7 +1,7 @@
 name: flutter_html_render
 description: A new Flutter plugin.
 version: 0.0.1
-homepage:
+homepage: https://github.com/oseimensah/flutter_html_render.git
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
