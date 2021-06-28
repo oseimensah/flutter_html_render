@@ -1,7 +1,5 @@
 import 'dart:math';
 
-import 'package:chewie/chewie.dart';
-import 'package:chewie_audio/chewie_audio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_html_render/html_parser.dart';
@@ -15,7 +13,6 @@ import 'package:flutter_html_render/style.dart';
 import 'package:flutter_math_fork/flutter_math.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:html/dom.dart' as dom;
-import 'package:video_player/video_player.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 /// A [ReplacedElement] is a type of [StyledElement] that does not require its [children] to be rendered.
@@ -142,17 +139,22 @@ class AudioContentElement extends ReplacedElement {
       height: Theme.of(context.buildContext).platform == TargetPlatform.android
           ? 48
           : 75,
-      child: ChewieAudio(
-        controller: ChewieAudioController(
-          videoPlayerController: VideoPlayerController.network(
-            src.first ?? "",
-          ),
-          autoPlay: autoplay,
-          looping: loop,
-          showControls: showControls,
-          autoInitialize: true,
+      child: Container(
+        child: Center(
+          child: Text('Audio not Supported'),
         ),
       ),
+      // child: ChewieAudio(
+      //   controller: ChewieAudioController(
+      //     videoPlayerController: VideoPlayerController.network(
+      //       src.first ?? "",
+      //     ),
+      //     autoPlay: autoplay,
+      //     looping: loop,
+      //     showControls: showControls,
+      //     autoInitialize: true,
+      //   ),
+      // ),
     );
   }
 }
@@ -188,23 +190,28 @@ class VideoContentElement extends ReplacedElement {
     return AspectRatio(
       aspectRatio: _width / _height,
       child: Container(
-        key: AnchorKey.of(context.parser.key, this),
-        child: Chewie(
-          controller: ChewieController(
-            videoPlayerController: VideoPlayerController.network(
-              src.first ?? "",
-            ),
-            placeholder: poster != null
-                ? Image.network(poster!)
-                : Container(color: Colors.black),
-            autoPlay: autoplay,
-            looping: loop,
-            showControls: showControls,
-            autoInitialize: true,
-            aspectRatio: _width / _height,
-          ),
+        child: Center(
+          child: Text('Video not Supported'),
         ),
       ),
+      // child: Container(
+      //   key: AnchorKey.of(context.parser.key, this),
+      //   child: Chewie(
+      //     controller: ChewieController(
+      //       videoPlayerController: VideoPlayerController.network(
+      //         src.first ?? "",
+      //       ),
+      //       placeholder: poster != null
+      //           ? Image.network(poster!)
+      //           : Container(color: Colors.black),
+      //       autoPlay: autoplay,
+      //       looping: loop,
+      //       showControls: showControls,
+      //       autoInitialize: true,
+      //       aspectRatio: _width / _height,
+      //     ),
+      //   ),
+      // ),
     );
   }
 }
