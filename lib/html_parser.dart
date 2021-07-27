@@ -75,7 +75,7 @@ class HtmlParser extends StatelessWidget {
     required this.imageRenders,
     required this.tagsList,
     required this.navigationDelegateForIframe,
-  })  : this._onAnchorTap = onAnchorTap != null
+  })   : this._onAnchorTap = onAnchorTap != null
             ? onAnchorTap
             : key != null
                 ? _handleAnchorTap(key, onLinkTap)
@@ -479,7 +479,7 @@ class HtmlParser extends StatelessWidget {
       InlineSpan addTaps(InlineSpan childSpan, TextStyle childStyle) {
         if (childSpan is TextSpan) {
           return TextSpan(
-            mouseCursor: SystemMouseCursors.click,
+            // mouseCursor: SystemMouseCursors.click,
             text: childSpan.text,
             children: childSpan.children
                 ?.map((e) => addTaps(e, childStyle.merge(childSpan.style)))
@@ -520,7 +520,7 @@ class HtmlParser extends StatelessWidget {
       }
 
       return TextSpan(
-        mouseCursor: SystemMouseCursors.click,
+        // mouseCursor: SystemMouseCursors.click,
         children: tree.children
             .map((tree) => parseTree(newContext, tree))
             .map((childSpan) {
