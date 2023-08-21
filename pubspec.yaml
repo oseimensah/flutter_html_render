@@ -26,7 +26,7 @@ dependencies:
   # Plugins for rendering the <svg> tag.
   flutter_svg: ">=0.22.0 <2.0.7"
   # Plugin for rendering MathML
-  flutter_math_fork: ">=0.3.2+1 <1.0.0"
+  flutter_math_fork: ">=0.7.0 <1.0.0"
   # plugin for firstWhereOrNull extension on lists
   collection: ">=1.15.0 <2.0.0"
   # plugin to convert integers to numerals
